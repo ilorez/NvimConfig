@@ -32,6 +32,10 @@ keymaps({
 		{ "<leader>a", "ggVG", desc = "Select all file"},
 		{ "<leader>%", "<cmd>source<cr>", desc = "Source current file" },
 
+		{ "<C-h>", "<C-w>h", desc = "Move to left split" },
+		{ "<C-j>", "<C-w>j", desc = "Move to bottom split" },
+		{ "<C-k>", "<C-w>k", desc = "Move to top split" },
+		{ "<C-l>", "<C-w>l", desc = "Move to right split" },
 
 		{ "<leader>c", "<C-w>c", desc = "Close current window"},
 		{ "<leader>Y", '"+Y', desc = "Copy line to system clipboard" },
