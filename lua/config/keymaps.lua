@@ -47,10 +47,11 @@ keymaps({
 		{ "<leader>q", ":q<CR>", desc = "Quit file" },
 		{ "<leader>x", ":wq<CR>", desc = "Save and quit" },
 
+		{ "<leader>cf", function() vim.lsp.buf.format({ async = true }) end, desc = "Format file" },
+
 		{ "<leader>s", group = "Split", icon = "" },
 		{ "<leader>sv", ":vsplit<CR>", desc = "Split vertically" },
 		{ "<leader>sh", ":split<CR>", desc = "Split horizontally" },
-
 		{ "<leader>f", group = "Telescope", icon = " "},
 		{ "<leader>ff", ":Telescope find_files<CR>", desc = "Find files" },
 		{ "<leader>fg", ":Telescope live_grep<CR>", desc = "Live grep" },
@@ -62,6 +63,7 @@ keymaps({
 		{ "<leader>fr", ":Telescope resume<CR>", desc = "[F]ind [R]esume" },
 		{ "<leader>f.", ":Telescope oldfiles<CR>", desc = '[F]ind Recent Files ("." for repeat)' },
 		{ "<leader>f ", ":Telescope buffers<CR>", desc = "[ ] Find existing buffers" },
+
 		{
 			"<leader>fm",
 			function()
