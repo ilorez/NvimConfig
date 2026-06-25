@@ -3,6 +3,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
+
 -- Don't auto-comment newlines when hitting 'o' or 'O' on a commented line
 autocmd("BufEnter", {
   pattern = "*",
@@ -68,6 +69,14 @@ autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+-- Disable <> autopair in C/C++ files
+autocmd("FileType", {
+  pattern = { "c", "cpp" },
+  callback = function()
+    vim.keymap.set("i", "<", "<", { buffer = true, noremap = true })
   end,
 })
 
